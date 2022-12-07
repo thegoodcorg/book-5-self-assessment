@@ -10,17 +10,17 @@ document.addEventListener("change", (event) => {
 
 // Requirement: The radio input elements that this component funcion renders must all have a name of "sideDish"
 export const Sides = () => {
-    let html = "<ul>"
 
-    const listItems = sideDishes.map(dish => {
+    let html = `<ul>
+        ${sideDishes.map(dish => {
         return `<li>
-            <input type="radio" />
-        </li>`
-    })
-
-    html += listItems.join("")
-    html += "</ul>"
+                            <input type="radio" name="sideDish" value="${dish.id}" /> ${dish.title}
+                        </li>`
+    }).join("")
+        }
+    </ul>`
 
     return html
+
 }
 
